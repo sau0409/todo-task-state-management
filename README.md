@@ -2,4 +2,7 @@
 
 ##Used Pub-Sub pattern for event handling
 
-##Store patter for state management
+##Store pattern for state management
+
+##app
+https://sau0409.github.io/todo-task-state-management/
