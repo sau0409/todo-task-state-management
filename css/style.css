@@ -1,0 +1,170 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.header {
+  z-index: 3000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right bottom, #1a5399, #008891);
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center; }
+  .header__logo-box {
+    color: #ddd;
+    margin-left: 2vw;
+    font-family: "Oleo Script", cursive; }
+
+body {
+  margin-top: 5rem;
+  padding: 2rem;
+  font-family: "Raleway", sans-serif;
+  width: 100%;
+  margin: 0 auto; }
+
+main {
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.todo {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  justify-content: space-around;
+  margin: 0 2rem; }
+
+.todo-create {
+  padding: 2rem;
+  box-shadow: 0 5px 10px #555;
+  width: 100%;
+  height: 30%; }
+  .todo-create__main-text {
+    font-family: "Oleo Script", cursive; }
+  .todo-create__container {
+    display: flex;
+    padding: 1rem 1rem;
+    justify-content: space-between; }
+  .todo-create__input-container {
+    width: 60%; }
+  .todo-create__input {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.1rem;
+    display: block;
+    border: 2px solid transparent;
+    border-bottom: 2px solid #008891; }
+    .todo-create__input:focus {
+      outline: none;
+      border-bottom: 2px solid #1a5399; }
+  .todo-create__button {
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    font-weight: 700;
+    color: #008891;
+    border-radius: 0.3rem;
+    box-shadow: 0 5px 10px #555;
+    display: inline-block;
+    transition: all 200ms; }
+    .todo-create__button:hover {
+      box-shadow: 0 2px 5px #555; }
+    .todo-create__button:active {
+      box-shadow: 0 2px 5px #555;
+      transform: translateY(0.3rem); }
+
+.todo-stat {
+  padding: 2rem;
+  box-shadow: 0 5px 10px #555;
+  position: relative;
+  width: 100%;
+  height: 40%; }
+  .todo-stat__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .todo-stat__circle1, .todo-stat__circle2 {
+    stroke: #008891;
+    stroke-width: 1rem;
+    fill: none;
+    stroke-dasharray: 440;
+    stroke-linecap: round; }
+  .todo-stat__circle1 {
+    stroke: #ddd;
+    stroke-width: 10px;
+    fill: none;
+    stroke-dashoffset: 0; }
+  .todo-stat__circle2 {
+    stroke: #008891;
+    stroke-width: 10px;
+    fill: none; }
+  .todo-stat__data {
+    font-family: "Oleo Script", cursive;
+    font-size: 2rem;
+    color: #1a5399;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+.todo-view {
+  padding: 2rem;
+  box-shadow: 0 5px 10px #555;
+  height: 500px;
+  margin: 0 auto; }
+  .todo-view__main-text {
+    font-family: "Oleo Script", cursive; }
+  .todo-view__container {
+    overflow-y: scroll;
+    height: 400px;
+    padding: 1rem 1rem; }
+  .todo-view__item {
+    box-shadow: 0 5px 10px #555;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem; }
+  .todo-view__item--main-text {
+    padding: 1rem;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: #1a5399; }
+  .todo-view__item--action {
+    display: flex;
+    padding: 0.5rem;
+    justify-content: space-around; }
+    .todo-view__item--action-edit, .todo-view__item--action-complete, .todo-view__item--action-delete {
+      list-style: none; }
+    .todo-view__item--action-edit-link, .todo-view__item--action-complete-link, .todo-view__item--action-delete-link {
+      text-decoration: none;
+      color: #008891;
+      font-family: "Oleo Script", cursive;
+      padding: 0.5rem 1.4rem;
+      border-radius: 3px;
+      display: inline-block;
+      outline: 2px solid #008891; }
+      .todo-view__item--action-edit-link:hover, .todo-view__item--action-complete-link:hover, .todo-view__item--action-delete-link:hover {
+        background-color: #008891;
+        color: #ddd;
+        outline: none; }
+      .todo-view__item--action-edit-link:active, .todo-view__item--action-complete-link:active, .todo-view__item--action-delete-link:active {
+        transform: translateY(3px); }
+
+@media (max-width: 500px) {
+  body {
+    width: 100%;
+    padding: 0.5rem; }
+  main {
+    padding: 0.5rem;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+  .todo-create,
+  .todo-view {
+    width: 100%;
+    padding: 0.5rem; }
+  .todo-view {
+    height: 60vh; } }

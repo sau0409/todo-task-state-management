@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>ToDo List</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&family=Raleway&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo-box">
+            <h1 class="header__main-text">Too-Doo List</h1>
+        </div>
+    </header>
+    <main>
+        <section class="todo">
+            <div class="todo-create">
+                <h2 class="todo-create__main-text">Create Task</h2>
+                <div class="todo-create__container">
+                    <div class="todo-create__input-container">
+                        <input type="text" class="todo-create__input" required minlength="2" maxlength="30" />
+                    </div>
+                    <div class="todo-create__button-container">
+                        <a href="#" class="todo-create__button">Submit</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="todo-stat">
+            </div>
+        </section>
+        <section class="todo-view">
+            <h2 class="todo-view__main-text">Task List</h2>
+            <div class="todo-view__container">
+                <div class="todo-view__list"></div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+    <script type="module" src="./js/index.js"></script>
+</body>
+
+</html>

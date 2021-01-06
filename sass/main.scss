@@ -1,0 +1,244 @@
+@import "./base/base";
+@import "./abstract/variables";
+
+.header {
+  z-index: 3000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary,
+    $color-secondary
+  );
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+
+  &__logo-box {
+    color: $color-gray-lighter;
+    margin-left: 2vw;
+    font-family: $font-heading;
+  }
+}
+
+body {
+  margin-top: 5rem;
+  padding: 2rem;
+  font-family: $font-primary;
+  width: 100%;
+  margin: 0 auto;
+}
+
+main {
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.todo {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  justify-content: space-around;
+  margin: 0 2rem;
+}
+
+.todo-create {
+  padding: 2rem;
+  box-shadow: 0 5px 10px $color-gray-dark;
+  width: 100%;
+  height: 30%;
+
+  &__main-text {
+    font-family: $font-heading;
+  }
+
+  &__container {
+    display: flex;
+    padding: 1rem 1rem;
+    justify-content: space-between;
+  }
+
+  &__input-container {
+    width: 60%;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.1rem;
+    display: block;
+    border: 2px solid transparent;
+    border-bottom: 2px solid $color-secondary;
+
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid $color-primary;
+    }
+  }
+
+  &__button-container {
+  }
+
+  &__button {
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    font-weight: 700;
+    color: $color-secondary;
+    border-radius: 0.3rem;
+    box-shadow: 0 5px 10px $color-gray-dark;
+    display: inline-block;
+    transition: all 200ms;
+
+    &:hover {
+      box-shadow: 0 2px 5px $color-gray-dark;
+    }
+
+    &:active {
+      box-shadow: 0 2px 5px $color-gray-dark;
+      transform: translateY(0.3rem);
+    }
+  }
+}
+
+
+
+.todo-stat {
+  padding: 2rem;
+  box-shadow: 0 5px 10px $color-gray-dark;
+  position: relative;
+  width: 100%;
+  height: 40%;
+
+  &__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__circle1, &__circle2 {
+    stroke: $color-secondary;
+    stroke-width: 1rem;
+    fill: none;
+    stroke-dasharray: 440;
+    stroke-linecap: round;
+  }
+
+  &__circle1 {
+    stroke: $color-gray-lighter;
+    stroke-width: 10px;
+    fill: none;
+    stroke-dashoffset: 0;
+  }
+
+  &__circle2 {
+    stroke: $color-secondary;
+    stroke-width: 10px;
+    fill: none;
+  }
+
+  &__data {
+    font-family: $font-heading;
+    font-size: 2rem;
+    color: $color-primary;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+
+.todo-view {
+  padding: 2rem;
+  box-shadow: 0 5px 10px $color-gray-dark;
+  height: 500px;
+  margin: 0 auto;
+
+  &__main-text {
+    font-family: $font-heading;
+  }
+
+  &__container {
+    overflow-y: scroll;
+    height: 400px;
+    padding: 1rem 1rem;
+  }
+
+  &__item {
+    box-shadow: 0 5px 10px $color-gray-dark;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__item--main-text {
+    padding: 1rem;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: $color-primary;
+  }
+
+  &__item--action {
+    display: flex;
+    padding: 0.5rem;
+    justify-content: space-around;
+
+    &-edit,
+    &-complete,
+    &-delete {
+      list-style: none;
+    }
+
+    &-edit-link,
+    &-complete-link,
+    &-delete-link {
+      text-decoration: none;
+      color: $color-secondary;
+      font-family: $font-heading;
+      padding: 0.5rem 1.4rem;
+      border-radius: 3px;
+      display: inline-block;
+      outline: 2px solid $color-secondary;
+
+      &:hover {
+        background-color: $color-secondary;
+        color: $color-gray-lighter;
+        outline: none;
+      }
+
+      &:active {
+        transform: translateY(3px);
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  main {
+    padding: 0.5rem;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .todo-create,
+  .todo-view {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .todo-view {
+    height: 60vh;
+  }
+}
